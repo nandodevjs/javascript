@@ -1,4 +1,4 @@
-// Array
+// Array e lopps
 
 // É um grupo de valores geralmente relacionados. Servem para guardarmos diferentes valores em uma única variável.
 
@@ -35,3 +35,8 @@ while (i < 10) {
     console.log(i);
     i++
 }
+
+for (var i = 0; i < videoGames.length; i++) {
+    console.log(videoGames[i]);
+}
+// O for loop é o mais comum
