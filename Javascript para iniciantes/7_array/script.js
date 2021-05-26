@@ -54,8 +54,8 @@ for (var item = 0; item < videoGames.length; item++) {
 
 // ForEach é um método que executa uma função para cada item do array. É uma forma mais simples de utilizarmos um loop com arrays ou array-like.
 
-console.log(videoGames.forEach(function(item){
-    console.log(item);
-})); // O argumento item será atribuído dinamicamente.
+videoGames.forEach(function(item, index){
+    console.log(item, index);
+}); // O argumento item será atribuído dinamicamente.
 
 // Podemos passar os seguintes parâmetros: item, index e array.
