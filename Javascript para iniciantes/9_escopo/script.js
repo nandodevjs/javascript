@@ -1,45 +1,53 @@
-// Operadores de Atribuição
+// Escopo de função
 
-// Podem funcionar como formas abreviadas
+// Variáveis declaradas dentro de funções não são acessadas fora das mesmas.
 
-var x = 5
-var y = 5
+function mostrarCarro () {
+    var carro = "Fusca"
+    console.log(carro);
+}
 
-x += y
-x -= y
-x *= y
-x /= y
-x %= y
-x **= y
+mostrarCarro() // Fusca no console
+//console.log(carro()); // Undefinied
 
-// X paassa a receber o útimo valor atribuido a ele que veio do Y
+// Variável Global (Erro)
 
-console.log(x);
+// Declarar variáveis sem a palavra chave var, let ou const, cria uma variável que pode ser acessada em qualquer escopo (global). Isso é um erro!
 
-// Operador ternário
+function mostrarCarro2() {
+    carro2 = "Ferrari"
+    console.log(carro2);
+}
 
-// Abreviação de condicionais com if e else.
+mostrarCarro2()
+console.log(carro2);
 
-var idade = 19
-var podeBeber = (idade >= 18) ? "Pode beber" : "Não pode beber"
+// 'Use strict' impede isso.
 
-// Condição ? true : False
+// Escopo de função (Pai)
 
-// Geralmente utilizado quando precisamos atribuir um valor para uma variável, dependendo de uma condição.
+// Variáveis declaradas no escopo pai da função, conseguem ser acessadas pelas funções
 
-// If Abreviado
+var carro3 = "Audi A7"
 
-// Não é necessário abrir e fechar as chaves {} quando retornamos uma linha de código.
+function mostrarCarro3 () {
+    var frase = `Meu carro é um ${carro3}`
+    console.log(frase);
+}
 
-var possuiFaculdade = true
-if (possuiFaculdade) console.log("Possui faculdade");
-else console.log("Não possui faculdade.");
+mostrarCarro3()
+console.log(carro3);
 
-//ou
+// Escopo de Bloco
 
-if (possuiFaculdade)
-    console.log("Possui faculdade");
-else
-    console.log("Não possui faculdade");
+// Variáveis criadas com var, vazam o bloco. Por isso a introdulçao do ES6 a melhor forma de declaramos variáveis é ustilizando let ou const, pois estas respeitam o escopo do bloco
 
-// Eu particupalmente prefiro a segunda opção.
+if (true) {
+    var carro4 = "GTR"
+    console.log(carro4);
+}
+console.log(carro4);
+
+// Mesmo com a condição falsa, a variável ainda será declarada utilizando hoisting e o valor ficará como undefined.
+
+// A partir de agora ireomos utilizar const e let no lugar de var.
