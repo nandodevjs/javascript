@@ -31,3 +31,22 @@ document.body // Retorna o body
 
 // Window é um objeto global,por isso não precisamos chamar ele na frente dos seus métodos e propriedades.
 
+// Node
+
+// Toda tag html é representada pelo objeto Element e por isso herda os seus métodos e propriedades. Element é um tipo de objeto Node.
+
+const titulo = document.querySelector("h1") // Vai selecionar o primeiro elemento
+
+//titulo.innerText; // Retorna o texto
+//titulo.classList // Retorna as classes
+//titulo.idoffsetHeight // Retorna a altura do Elemento
+
+function callbackH1 () {
+    console.log("Clicou em", h1Selecionado);
+}
+
+h1Selecionado.addEventListener("click", callbackH1)
+
+// Ativa a função callback ao click no titulo.
+
+// const h1Class = h1Selecionado.tagName // Posso acessar as proriedades e métodos agora.
